@@ -1,0 +1,99 @@
+package com.berkhayta.springbootblogrestapi.mapper;
+
+import com.berkhayta.springbootblogrestapi.dto.request.UserSaveRequestDto;
+import com.berkhayta.springbootblogrestapi.dto.response.UpdateUserListByIdResponseDto;
+import com.berkhayta.springbootblogrestapi.dto.response.UserListAllResponseDto;
+import com.berkhayta.springbootblogrestapi.dto.response.UserListByIdResponseDto;
+import com.berkhayta.springbootblogrestapi.entity.User;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2024-05-01T17:46:27+0300",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.7.jar, environment: Java 21 (Oracle Corporation)"
+)
+@Component
+public class UserMapperImpl implements UserMapper {
+
+    @Override
+    public User userSaveRequestDtoToUser(UserSaveRequestDto userDto) {
+        if ( userDto == null ) {
+            return null;
+        }
+
+        User.UserBuilder user = User.builder();
+
+        user.firstName( userDto.firstName() );
+        user.lastName( userDto.lastName() );
+        user.email( userDto.email() );
+        user.password( userDto.password() );
+
+        return user.build();
+    }
+
+    @Override
+    public UserListAllResponseDto userFindAllResponseDto(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        Long id = null;
+        String firstName = null;
+        String lastName = null;
+        String email = null;
+
+        id = user.getId();
+        firstName = user.getFirstName();
+        lastName = user.getLastName();
+        email = user.getEmail();
+
+        UserListAllResponseDto userListAllResponseDto = new UserListAllResponseDto( id, firstName, lastName, email );
+
+        return userListAllResponseDto;
+    }
+
+    @Override
+    public UserListByIdResponseDto userFindByIdResponseDto(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        Long id = null;
+        String firstName = null;
+        String lastName = null;
+        String email = null;
+
+        id = user.getId();
+        firstName = user.getFirstName();
+        lastName = user.getLastName();
+        email = user.getEmail();
+
+        UserListByIdResponseDto userListByIdResponseDto = new UserListByIdResponseDto( id, firstName, lastName, email );
+
+        return userListByIdResponseDto;
+    }
+
+    @Override
+    public UpdateUserListByIdResponseDto updateUserFindByIdResponseDto(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        Long id = null;
+        String firstName = null;
+        String lastName = null;
+        String email = null;
+        String password = null;
+
+        id = user.getId();
+        firstName = user.getFirstName();
+        lastName = user.getLastName();
+        email = user.getEmail();
+        password = user.getPassword();
+
+        UpdateUserListByIdResponseDto updateUserListByIdResponseDto = new UpdateUserListByIdResponseDto( id, firstName, lastName, email, password );
+
+        return updateUserListByIdResponseDto;
+    }
+}
