@@ -5,12 +5,12 @@
 * Maven and Gradle
 * Lombok
 
-#Database and ORM
-*Spring Data JPA
-*Hibernate
-*PostgreSQL
+# Database and ORM
+* Spring Data JPA
+* Hibernate
+* PostgreSQL
 
-#API and Data Transfer
-*Spring Web MVC
-*ModelMapper
+# API and Data Transfer
+* Spring Web MVC
+* ModelMapper
 
